@@ -25,4 +25,3 @@ svg.selectAll("rect")
     return d;
   })
   .attr("fill", "#36a2eb");
-
