@@ -11,7 +11,7 @@ const canvasWidth = 800;
 const canvasHeight = 500;
 
 const chartPadding = 50;
-const rectPadding = 35;
+const rectPadding = 55;
 
 const svg = d3.select("#d3-chart-wrapper")
   .append("svg")
@@ -45,11 +45,9 @@ svg.selectAll("rect")
   .append("rect")
   .attr("transform", "translate(" + chartPadding + ", " + 0 + ")")
   .attr("x", function(d, i) {
-    console.log(xScale(i));
     return xScale(i) + rectPadding / 2;
   })
   .attr("y", function(d, i) {
-    console.log("yScale " + yScale(d));
     return yScale(d);
   })
   .attr("width", (xScale.bandwidth() - rectPadding))
