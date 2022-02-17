@@ -22,7 +22,7 @@ const svg = d3.select("#d3-chart-wrapper")
 /**
  * Scale
  */
-const dataRange = [0, 1, 2, 3, 4];
+const dataRange = Array.from(dataset.keys());
 const xScale = d3.scaleBand()
   .domain(dataRange)
   .range([0, canvasWidth - chartPadding - chartPadding]);

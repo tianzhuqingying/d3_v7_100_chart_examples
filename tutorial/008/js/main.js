@@ -38,12 +38,6 @@ const xScaleMonth = d3.scaleBand()
   .domain(monthIndex)
   .range([0, canvasWidth - chartPadding - chartPadding]);
 
-// Color Scale
-const colorScale = d3.scaleLinear()
-  .domain([0, d3.max(dataset)])
-  .range(["#78c7e7", "#ff6384"]);
-const colorPlatte =["#7fc97f","#beaed4"];
-
 /**
  * Draw Rect
  */

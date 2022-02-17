@@ -7,14 +7,12 @@
 /**
  * Basic Settings
  */
-const dataset = [21, 34, 55, 89, 144];
-
 const canvasWidth = 800;
 const canvasHeight = 500;
 
 const chartPadding = 50;
 
-const treeData = {
+const dataset = {
   "name": "Front End",
   "color": "#ff6384",
   "children": [
@@ -61,9 +59,6 @@ const treeData = {
   ]
 };
 
-/**
- * Draw Chart
- */
 const svg = d3.select("#d3-chart-wrapper")
   .append("svg")
   .attr("width", canvasWidth)
@@ -72,20 +67,31 @@ const svg = d3.select("#d3-chart-wrapper")
   .append("g")
   .attr("transform", "translate(100, 20)");
 
-const cluster = d3.cluster()
+/**
+ * Draw Chart
+ */
+
+// cluster
+// 初始化一个树布局，并设定其宽高
+const clusterChart = d3.cluster()
   .size([canvasHeight - chartPadding, canvasWidth - chartPadding * 4]);
 
-// Give the data to this cluster layout:
-const root = d3.hierarchy(treeData, function(d) {
+// 生成d3.tree能够处理的层次结构的数据
+const root = d3.hierarchy(dataset, function(d) {
   return d.children;
 });
-cluster(root);
+
+// 计算树布局中各节点的位置，计算得到的默认布局是垂直的
+const nodeData = clusterChart(root).descendants();
+
+// root.descendants() 所有节点的数组
+
 
 /**
  * Draw links between nodes.
  */
 svg.selectAll('path')
-  .data( root.descendants().slice(1) )
+  .data(nodeData.slice(1))
   .join('path')
   .attr("d", function(d) {
     return "M" + d.y + "," + d.x
@@ -94,13 +100,13 @@ svg.selectAll('path')
       + " " + d.parent.y + "," + d.parent.x;
     })
   .style("fill", 'none')
-  .attr("stroke", '#7f7f7f')
+  .attr("stroke", '#7f7f7f');
 
 /**
  * Draw circle node and label.
  */
 const circleNode = svg.selectAll("g")
-  .data(root.descendants())
+  .data(nodeData)
   .join("g")
   .attr("transform", function(d) {
     return `translate(${d.y}, ${d.x})`
