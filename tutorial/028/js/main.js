@@ -8,7 +8,7 @@
  * Basic Settings
  */
 const canvasWidth = 800;
-const canvasHeight = 500;
+const canvasHeight = 800;
 
 const chartPadding = 50;
 
@@ -90,6 +90,15 @@ const nodeData = clusterChart(root).descendants();
 /**
  * Draw links between nodes.
  */
+// svg.selectAll('line')
+//   .data(nodeData.slice(1))
+//   .join('line')
+//   .attr('x1', d => d.y)
+//   .attr('y1', d => d.x)
+//   .attr('x2', d => d.parent.y)
+//   .attr('y2', d => d.parent.x)
+//   .attr("stroke", '#7f7f7f');
+
 svg.selectAll('path')
   .data(nodeData.slice(1))
   .join('path')
@@ -109,7 +118,7 @@ const circleNode = svg.selectAll("g")
   .data(nodeData)
   .join("g")
   .attr("transform", function(d) {
-    return `translate(${d.y}, ${d.x})`
+    return `translate(${d.y}, ${d.x})`;
   });
 
 circleNode.append("circle")
