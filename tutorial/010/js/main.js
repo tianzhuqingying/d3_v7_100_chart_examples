@@ -37,63 +37,6 @@ const xScaleMonth = d3.scaleBand()
   .range([0, canvasWidth - chartPadding - chartPadding]);
 
 /**
- * 演示用
- */
-// svg.append('line')
-//   .attr('x1', 120)
-//   .attr('y1', 400)
-//   .attr('x2', 260)
-//   .attr('y2', 370)
-//   .attr('stroke', '#36a2eb')
-//   .attr('stroke-width', 2);
-/**
- * 演示用
- */
-// svg.append('path')
-//   .attr('d', 'M120,400 L260,370 L400,245')
-//   .style('fill', 'none')
-//   .style('stroke', '#1f77b4')
-//   .style('stroke-width', 2);
-
-var lineGenerator = d3.line();
-var points = [
-  [0, 80],
-  [100, 100],
-  [200, 30],
-  [300, 50],
-  [400, 40],
-  [500, 80]
-];
-var pathData = lineGenerator(points);
-
-console.log({pathData});
-/**
- * https://observablehq.com/@d3/d3-line
- * line generator
- */
-const lineShape = d3.line()
-// const lineShape = d3.area()
-  .x(function(d, i) {
-    return xScale(i);
-  })
-  .y(function(d) {
-    return yScale(d);   // top of area
-  })
-  // .y0(yScale(0))    // bottom of area
-  // .curve(d3.curveMonotoneX);
-
-svg.append("g")
-  .append("path")
-  .datum(dataset)
-  .attr("transform", "translate(" + 120 + "," + 0 + ")")
-  .attr("d", lineShape)
-  // .style("fill", "#78c7e7")
-  .style("fill", "none")
-  .style("opacity", "0.6")
-  .style("stroke", "#ff6384")
-  .style("stroke-width", "2");
-
-/**
  * Draw circle
  */
 svg.append('g')
