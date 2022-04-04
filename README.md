@@ -5,7 +5,7 @@ The example is used D3.js v7.1.1.
 
 | No. | Title | Description | 内容 | Thumbnail |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 001  | Selection  | Selecting Elements  | 选择器 | <img src="thumbnail/002.png" width="200"></img> |
+| 001  | Selection  | Selecting Elements  | 选择器 | <img src="thumbnail/001.png" width="200"></img> |
 | 002  | 7 Basic Elements 1 | Rect, Circle and Ellipse  | 矩形 圆形 椭圆 | <img src="thumbnail/002.png" width="200"></img> |
 | 003  | 7 Basic Elements 2 | Line, Polyline and Polygon  | 线条 折线 多边形 | <img src="thumbnail/003.png" width="200"></img>  |
 | 004  | 7 Basic Elements 3 | Path  | 路径 | <img src="thumbnail/004.png" width="200"></img>  |
@@ -22,5 +22,6 @@ The example is used D3.js v7.1.1.
 | 015  | Doughnut Chart |  | 环形图  | <img src="thumbnail/015.png" width="200"></img>  |
 | 016  | Gauge Chart |  | 仪表图 测量图  | <img src="thumbnail/016.png" width="200"></img>  |
 | 017  | Time Series Line |  | 时间序列图  | <img src="thumbnail/017.png" width="200"></img>  |
+| 018  | Multiple Time Series Line  | Axis settings | 多个时间序列图 轴线设置  | <img src="thumbnail/018.png" width="200"></img>  |
 | 086  | Word Cloud |  | 词云图  | <img src="thumbnail/086.png" width="200"></img>  |
 

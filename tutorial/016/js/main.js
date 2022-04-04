@@ -15,8 +15,6 @@ const svg = d3.select("#d3-chart-wrapper")
   .attr("height", canvasHeight)
   .style('background', '#f7f9fa');
 
-const colorPlatte1 = ['#ff6384', '#78c7e7'];
-
 /**
  * Draw a arc shape
  */

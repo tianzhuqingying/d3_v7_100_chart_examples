@@ -2,8 +2,10 @@
  * d3_v7_100_chart_examples with D3.js v7.1.1
  */
 
-// https://www.d3-graph-gallery.com/graph/dendrogram_basic.html
-// https://www.javascript.fun/
+/**
+ * @References
+ * https://www.d3-graph-gallery.com/graph/dendrogram_basic.html
+ */
 /**
  * Basic Settings
  */
